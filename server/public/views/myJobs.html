@@ -1,0 +1,130 @@
+<div ng-include="'/views/templates/nav.html'"></div>
+<md-card class="myJobsCard">
+  <md-toolbar>
+    <h1 class="toolbarText">My Jobs</h1>
+  </md-toolbar>
+  <md-subheader>
+
+      <strong>Show me</strong>
+      <select ng-model="order" ng-options="prop for prop in ['all', 'accepted', 'finalized', 'finished']" ng-change="sort(order)"></select>
+      <strong>jobs</strong>
+
+      <input type="text" placeholder="Search" class="jobSearch" ng-model="searchText"/>
+      <i class="material-icons searchIcon" ng-click="search(searchText)">search</i>
+
+  </md-subheader>
+
+    <md-card ng-repeat="job in sortedJobs | filter: searchText" class="repeatJobsList">
+
+      <div ng-click="setActive(job)">
+      <div class="userJobListRepeatJobs">
+        <div class="myJobsAddressRepeat">
+          <p>Address: <strong>{{job.address.line1}} </strong></p>
+          <p><strong>{{job.address.city}}, {{job.address.state}}  {{job.address.zip}}</strong></p>
+          <p>Phone: <strong>{{job.phone}}</strong></p>
+        </div>
+        <div class="myJobsEmailRepeat">
+          <p>Primary Email: <strong>{{job.emails[0]}}</strong></p>
+          <p>Preferred Date: <strong>{{job.preferredDate | date : format : longDate}}</strong></p>
+          <p>Due Date: <strong>{{job.dueDate | date : format : longDate}}</strong></p>
+        </div>
+        <div>
+          <p>Square Feet: <strong>{{job.squareFeet.name}} - ${{job.squareFeet.value}}</strong></p>
+          <p>After Dark: <strong>{{job.afterDark.name}} - ${{job.afterDark.value}}</strong></p>
+          <p>TimeFrame: <strong>{{job.timeFrame}}</strong></p>
+        </div>
+        <div class="myJobsPayRepeat">
+          <p>Job Status: <strong>{{job.jobStatus}}</strong></p>
+          <p>Pay: <strong>${{job.totalPrice}}</strong></p>
+        </div>
+        <div>
+          <p  ng-show="job.jobStatus == 'finalized'" ng-class="job.jobStatus">Shoot Date: <strong>{{job.chat.date | date : format : longDate}} at {{job.chat.time}}</strong></p>
+          <p><strong>Click to show messages . . .</strong></p>
+        </div>
+      </div>
+
+
+
+
+
+<!-- ***************************** CHAT BOX **************************************** -->
+      <div ng-show="showMe && activeJob._id==job._id" class="chatCard">
+        <md-card>
+          <div class="chatFeatures">
+
+            <h3 class="homeownerChat">Homeowner Chat</h3>
+
+
+            <div class="chatBox">
+                <p class="chatLine" ng-repeat="message in messages">
+              On {{message.timestamp | date:'short'}} {{message.username}} said:  <strong> {{message.message}} </strong>
+                 </p>
+                 <div class="sendUserMessageDiv" ng-show="job.jobStatus != 'finished'">
+                   <form>
+                     <md-input-container class="md-block messageTextArea">
+                       <label>Send Message</label>
+                       <textarea type="text" ng-model="messageContainer.message"></textarea>
+                     </md-input-container>
+                       <md-button class="md-raised md-primary sendMessageUser" ng-click="submitMessage(job._id)" type="submit" name="sendUserMessage">Send</md-button>
+                     </form>
+
+                   </div>
+            </div>
+
+
+
+
+            <!-- ************* SET TIME WITH HOMEOWNER *************** -->
+            <div class="chatTimeSet"  >
+              <form ng-show="job.jobStatus == 'accepted'">
+                <md-datepicker   class="chatDatePicker md-block"  md-max-date="maxDate" md-min-date="minDate" ng-model="timeFrame.date" md-placeholder="Photoshoot Date">
+                </md-datepicker>
+
+                <md-input-container  class="chatTimePicker md-block">
+                  <label>Preferred Time</label>
+                  <md-select  ng-model="timeFrame.time" aria-label="Timeframe">
+                    <md-option ng-repeat="item in preferredTime">{{item}}</md-option>
+                  </md-select>
+                </md-input-container>
+                <md-button class="md-raised md-primary md-block photoshootTimeSetButton" ng-click="submitDate(job._id)" type="submit" name="setTimeAndDate">Confirm</md-button>
+              </form>
+
+              <div class="myJobsConfirmed" ng-show="job.chat.date != ''">
+
+                <p><strong>CURRENTLY CONFIRMED</strong></p>
+                <p>{{job.chat.date | date : format : longDate}}</p>
+                <p>{{job.chat.time}}</p>
+                <p>Method of Entry: {{job.entryMethod}}</p>
+                <p ng-show="job.photoURL != ''">CURRENT PHOTO LINK: {{job.photoURL}}</p>
+                <label for="photos">Drop Photo Link Here</label>
+                <input ng-model="photoURL.url" type="text" name="photos" />
+                <md-button class="md-raised md-primary md-block" ng-click="submitPhotoURL(job._id)">Submit Photos</md-button>
+              </div>
+
+            </div>
+
+              <!-- ******************************************** -->
+            <!-- <div class="sendUserMessageDiv" ng-show="job.jobStatus != 'finished'">
+              <form>
+                <md-input-container class="md-block messageTextArea">
+                  <label>Send Message</label>
+                  <textarea type="text" ng-model="messageContainer.message"></textarea>
+                </md-input-container>
+                  <md-button class="md-raised md-primary sendMessageUser" ng-click="submitMessage(job._id)" type="submit" name="sendUserMessage">Send</md-button>
+                </form>
+
+              </div> -->
+              <!-- ******************************************** -->
+
+          </div>
+
+
+        </md-card>
+      </div>
+      <!-- ********************************************************************* -->
+    </md-card>
+  </div>
+
+
+
+</md-card>

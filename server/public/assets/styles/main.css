@@ -1,0 +1,638 @@
+/*----------------------------------------------------All Pages----------------------------------------------------*/
+
+body, h1 {
+  font-family:Open Sans;
+  font-weight: 300;
+}
+
+body, p {
+  font-weight:600;
+  color:#4d4d4d;
+}
+
+.md-raised {
+  color: white !important;
+}
+
+.md-nav-bar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+html, body {
+  background-color:#E1F5FE;
+}
+
+.material-icons {
+  color: white;
+}
+
+
+/*----------------------------------------------------Map Page----------------------------------------------------*/
+.mapsLink {
+  text-decoration: none;
+  font-weight: bold;
+  color:#378fd2;
+  transition:.2s;
+}
+.mapsLink:hover {
+  color:#5da4da;
+}
+
+
+.mapmodal {
+  height: 400px;
+  width: 350px;
+  background-color: white;
+  position: fixed;
+  left: 40%;
+  z-index: 4;
+}
+
+ng-map {
+  border:2px solid #ebebeb;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.mapmodal {
+  border-radius: 5px;
+  border: 2px solid #E0F7FA;
+}
+
+.closebtn {
+  cursor:pointer;
+  margin: 3px;
+  color:#00BFA5;
+  transition:.2s;
+}
+
+.closebtn:hover {
+  color:#00695C;
+}
+
+.modalText {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.due {
+  text-align:center;
+}
+.pay {
+  text-align:center;
+}
+
+.mapPrice {
+  margin-left: 15px;
+}
+
+.jobbtn {
+  margin-left:100px;
+}
+
+.mapcontainer{
+  width: 100%;
+  height: 80%;
+  margin: 20px auto;
+}
+.map{
+  width: 100%;
+  height: 80%;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  margin-bottom:15px;
+}
+
+.mapJobList > div {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  margin-left: 30px;
+}
+
+.jobbtn {
+  float: right;
+}
+
+.jobsCardMapPage {
+  background-color: #E0F7FA;
+}
+
+.mapAddress {
+  margin-left: 20px;
+}
+/*----------------------------------------------------Login Page----------------------------------------------------*/
+
+.signIn {
+  width: 100%;
+  height:100%;
+  background: url('../images/logo.png') no-repeat center center fixed;
+}
+.loginCard {
+  height:300px;
+  width:300px;
+  margin:auto;
+  opacity:0.9;
+}
+
+.signIn md-input-container{
+  padding:30px;
+}
+.loginButton {
+  margin-top:20px;
+  margin-left:75px;
+}
+
+.flashMessage {
+  position:fixed;
+  padding:10px;
+  border-radius:3px;
+  color:white;
+  background-color:#E57373;
+}
+
+/*----------------------------------------------------New Job Page----------------------------------------------------*/
+.createJob {
+  margin:auto;
+}
+
+.createJob md-input-container {
+  margin: 4%;
+  width: 40%;
+}
+
+md-datepicker {
+  margin: 2%;
+}
+
+.dates {
+  border-bottom: 3px dotted lightgray;
+  margin-top:4%;
+  margin-bottom:4%
+}
+
+.clientInfo {
+  background-color:#f7f7f7;
+  border-radius:5px;
+}
+
+.email {
+  width: 80%;
+  margin-left:20px;
+}
+
+.addEmail {
+  margin-left:20px;
+}
+
+.notes {
+  margin-top:30px;
+  margin-bottom:30px;
+  margin-right:30px;
+  height: 25%;
+  width: 200%;
+  border-radius:5px;
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(87,87,87,1);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(87,87,87,1);
+  box-shadow: 0px 0px 9px 0px rgba(87,87,87,1);
+}
+
+.textAreaContainer{
+  margin:auto;
+  margin-bottom:4%;
+}
+
+.addOnCheck {
+  margin-top:3%;
+  margin-left:4%;
+}
+
+md-toolbar {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.toolbarText {
+  color:white;
+  text-align: center;
+}
+
+.preferred {
+  text-align: center;
+}
+
+.addOns {
+  margin-top:4%;
+  margin-bottom:4%
+}
+
+.totalPrice {
+  border-top: 3px dotted lightgray;
+  padding-top:4%;
+  text-align: center;
+}
+
+
+/*----------------------------------------------------Admin Job List Page----------------------------------------------------*/
+.jobsListCard {
+  background-color: #E0F7FA;
+}
+
+.adminJobListCardAll {
+  background-color: lightgrey;
+}
+
+.adminJobClientName {
+  margin-left: 30px;
+  vertical-align: top;
+}
+
+.repeatClientInfo {
+  margin-left: 15%;
+}
+
+.repeatJobInfo {
+  margin-left: 30px;
+}
+
+.repeatJobDetails {
+  margin-left: 15%;
+}
+
+.open p {
+  background-color: #E57373;
+  padding:5px;
+  border-radius: 3px;
+  text-align:center;
+  color:white;
+}
+.accepted p {
+  background-color: #FFF176;
+  padding:5px;
+  border-radius: 3px;
+  text-align:center;
+}
+.finalized p {
+  background-color: #81C784;
+  padding:5px;
+  border-radius: 3px;
+  text-align:center;
+  color:white;
+}
+.finished p {
+  background-color: #E0E0E0;
+  padding:5px;
+  border-radius: 3px;
+  text-align:center;
+}
+
+.accepted {
+  background-color: #FFF176;
+  padding:5px;
+  border-radius: 3px;
+}
+
+.finalized {
+  background-color: #81C784;
+  padding:5px;
+  border-radius: 3px;
+  color:white;
+  text-align:center;
+}
+
+.finished {
+  background-color: #E0E0E0;
+  padding:5px;
+  border-radius: 3px;
+  text-align:center;
+}
+
+.repeatStatus {
+ float:left;
+  width:30%;
+}
+
+.searchIcon {
+  color: #78909C;
+  float:right;
+}
+
+.searchIcon:hover {
+  cursor: pointer;
+}
+
+.jobSearch {
+  float: right;
+}
+
+.dueDate {
+  margin-left:20px;
+}
+
+.adminJobViewClientFeld {
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+.inlineP {
+  display:inline-block;
+  margin-left: 20px;
+}
+
+.borderRight {
+  margin-right:20px;
+}
+
+.adminChatCard {
+  border-top: 1px dotted black;
+  width: 100%;
+}
+
+.homeownerChat {
+  margin-left: 5%;
+}
+
+.adminJobsConfirmed {
+  text-align: center;
+}
+
+.adminChatBox {
+  display: inline-block;
+  vertical-align:top;
+  border: 2px solid black;
+  border-radius:3px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 96%;
+  min-height: 300px;
+  height: auto;
+}
+
+.repeatedJobsAdmin > div {
+  display: inline-block;
+}
+/*----------------------------------------------------Admin User List Page----------------------------------------------------*/
+.userList {
+  background-color: lightgrey;
+}
+
+.userListCards > div {
+  display: inline-block;
+}
+
+.userListCardsUsername, .userListCardsEmail, .userListCardsPhone {
+  width: 25%;
+}
+
+.userListCardsUsername {
+  margin-left: 2%;
+}
+
+.userDeleteButton {
+  float: right;
+  margin-top:30px;
+}
+
+.userUpdateButton {
+  float: right;
+  margin-top:30px;
+}
+
+.adminUserPage {
+  background-color: #E0F7FA;
+}
+
+
+/*----------------------------------------------------Create User Page----------------------------------------------------*/
+
+.createUserCard {
+  background-color: #E0F7FA;
+}
+
+/*----------------------------------------------------User Jobs Page----------------------------------------------------*/
+.repeatJobsList:hover {
+  cursor: pointer;
+}
+
+.myJobsCard {
+  background-color: #E0F7FA;
+}
+
+.myJobsAddressRepeat {
+  min-width: 20%;
+}
+
+.myJobsEmailRepeat {
+  min-width: 25%;
+}
+
+.myJobsPayRepeat {
+  min-width: 15%;
+}
+
+.showMeTrue {
+}
+
+.userJobListRepeatJobs > div {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align:top;
+}
+
+.userJobListRepeatJobs {
+  overflow: auto;
+}
+
+
+.chatCard {
+  border-top: 1px dotted black;
+  width: 100%;
+}
+
+.chatBox {
+  display: inline-block;
+  vertical-align:top;
+  border: 2px solid black;
+  border-radius:3px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 65%;
+  min-height: 300px;
+  height: auto;
+}
+
+.chatText {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.sendUserMessageDiv {
+  margin-top: 150px;
+  margin-bottom: -30px;
+  width: 100%;
+  overflow: auto;
+}
+
+.myJobsConfirmed {
+  text-align: center;
+}
+
+.messageTextArea, .sendMessageUser {
+  margin-left: 20px;
+  float: left;
+}
+
+.messageTextArea {
+  width: 75%;
+}
+
+.textAreaContainer {
+  width:50%;
+}
+
+.textAreaContainer textarea {
+  width:80%;
+  margin: auto;
+}
+
+.chatTimeSet {
+  display: inline-block;
+  width: 250px;
+  min-height: 300px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+.chatDatePicker, .chatTimePicker {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.photoshootTimeSetButton {
+  margin-left: 70px;
+}
+
+
+
+.chatHeader {
+  margin-left: 20px;
+}
+
+/*----------------------------------------------------Landing Page----------------------------------------------------*/
+
+.contactUsModal {
+  height: 430px;
+  width: 350px;
+  border-radius: 10px;
+  background-color: #E0F7FA;
+  border: 2px solid #ADD8AB;
+  position: fixed;
+  bottom: 20%;
+  left: 40%;
+  z-index: 4;
+}
+
+.contactUsModalText {
+    text-align: center;
+}
+
+.md-nav-item {
+
+}
+
+.pixelHouzLogo {
+
+}
+
+.landingPageNavBar {
+
+}
+
+.jk-carousel img{
+  width: 100%;
+  height: 600;
+}
+
+.landingPageMapImage img {
+  width: 100%;
+}
+
+.landingPageMapImage {
+  margin-top: 50px;
+  height: auto;
+  display: inline-block;
+  width: 50%;
+}
+
+.landingPageAbout {
+  margin-top: 50px;
+  margin-left: 20px;
+  max-width: 40%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.landingPagePixelHouse {
+  font-weight: bold;
+}
+
+#contactInfo {
+  text-align: center;
+}
+#contactInfo h3 {
+  color: gray;
+}
+
+/*----------------------------------------------------Update Prices Page----------------------------------------------------*/
+.updatePricesForm {
+  margin:auto;
+  margin-top: 30px;
+}
+
+.updatePricesFormDivs {
+  display: inline-block;
+}
+
+.user {
+  color:red;
+}
+
+.updatePricesSquareFeet {
+  display: inline-block;
+  height: 100px;
+  width: 40%;
+  margin-left: 6%;
+}
+
+.updatePricesAfterDark {
+  display: inline-block;
+  height: 100px;
+  width: 40%;
+  margin-left: 6%;
+}
+
+.updatePricesAddons {
+  display: inline-block;
+  width: 40%;
+  margin-left: 6%;
+}
+
+.updateCurrentPricesForm h2{
+  margin-left: 6%;
+  border-top: 1px dotted black;
+}
+
+.updatePricesAddons .md-button {
+  display: inline-block;
+}
+
+.updateServicesButton {
+  text-align: center;
+  margin-top: 20px;
+}

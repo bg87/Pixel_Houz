@@ -1,0 +1,114 @@
+<div ng-include="'/views/templates/nav.html'"></div>
+<md-card>
+    <div ng-controller="FabCtrl as fab">
+
+        <!-- Toolbar ---------------------------------------------------------->
+        <md-toolbar layout="row">
+            <h1 class="toolbarText" flex="80">Update Prices</h1>
+            <md-fab-speed-dial md-open="fab.isOpen" md-direction="left" ng-class="fab.selectedMode" flex="22">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-fab md-accent">
+                        <i class="material-icons">menu</i>
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button aria-label="Job list" class="md-fab md-raised md-mini md-accent" ng-click="jobsList()">
+                        <i class="material-icons">list</i>
+                        <md-tooltip md-direction="bottom">
+                            Job List
+                        </md-tooltip>
+                    </md-button>
+                    <md-button aria-label="create a job" class="md-fab md-raised md-mini md-accent" ng-click="createJob()">
+                        <i class="material-icons">add_circle_outline</i>
+                        <md-tooltip md-direction="bottom">
+                            Create a Job
+                        </md-tooltip>
+                    </md-button>
+                    <md-button aria-label="update prices" class="md-fab md-raised md-mini md-accent" ng-click="updatePrices()">
+                        <i class="material-icons">settings</i>
+                        <md-tooltip md-direction="bottom">
+                            Update Prices
+                        </md-tooltip>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </md-toolbar>
+    </div>
+    <!-- Toolbar ---------------------------------------------------------->
+
+    <form class="updatePricesForm" name="addonForm">
+        <h2>Create A New Addon</h2>
+
+        <div class="updatePricesFormDivs newAddOn">
+            <md-input-container>
+                <label><strong>Name (Unique)</strong></label>
+                <input type="text" ng-model="newAddon.name" required/>
+                <div ng-messages="newAddOn.name.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+
+
+        <div class="updatePricesFormDivs">
+            <md-input-container>
+                <label><strong>Value</strong></label>
+                <input type="number" ng-model="newAddon.value" />
+            </md-input-container>
+        </div>
+
+        <md-button class="md-raised md-primary" type="submit" ng-click="createAddon()">Create</md-button>
+
+    </form>
+
+    <form class="updateCurrentPricesForm">
+        <h2>Square Feet</h2>
+        <div class="updatePricesSquareFeet" ng-repeat="item in sqft">
+            <md-input-container>
+                <label>Name</label>
+                <input type="text" ng-value="item.name" ng-model="item.name" />
+            </md-input-container>
+            <md-input-container>
+                <label>Price</label>
+                <input type="number" ng-value="item.value" ng-model="item.value" />
+            </md-input-container>
+
+        </div>
+        <h2>After Dark</h2>
+        <div class="updatePricesAfterDark" ng-repeat="item in afterDark">
+            <md-input-container>
+                <label>Name</label>
+                <input type="text" ng-value="item.name" ng-model="item.name" />
+            </md-input-container>
+            <md-input-container>
+                <label>Value</label>
+                <input type="number" ng-value="item.value" ng-model="item.value" />
+            </md-input-container>
+        </div>
+        <h2>Addons</h2>
+        <div class="updatePricesAddons" ng-repeat="item in addons">
+
+            <md-input-container>
+                <label>Name</label>
+                <input type="text" ng-value="item.name" ng-model="item.name" />
+            </md-input-container>
+
+            <md-input-container>
+                <label>Value</label>
+                <input type="number" ng-value="item.value" ng-model="item.value" />
+
+            </md-input-container>
+            <md-button aria-label="menu" class="md-fab md-mini md-warn" ng-click="deleteAddon(item.name)">
+                <i class="material-icons deleteForever">delete_forever</i>
+                <md-tooltip md-direction="top">
+                    Delete Addon
+                </md-tooltip>
+            </md-button>
+
+        </div>
+        <div class="updateServicesButton">
+            <md-button class="md-raised md-primary" type="submit" ng-click="updatePrices()">Update Services</md-button>
+        </div>
+    </form>
+
+</md-card>
